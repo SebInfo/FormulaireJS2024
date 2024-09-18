@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de contact</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1>Formulaire de contact</h1>
+    <form id="formulaireContact">
+        <fieldset id="infos">
+            <legend>Informations</legend>
+
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" placeholder="Parker" required>
+            <span id="cocheNom" class="coche">✔</span>
+
+            <label for="prenom">Prenom :</label>
+            <input type="text" id="prenom" placeholder="Peter" required>
+            <span id="cochePrenom" class="coche">✔</span>
+
+             
+             <label for="telephone">Téléphone :</label>
+             <input type="tel" id="telephone" placeholder="06 12 34 56 78" required>
+             <span id="cocheTelephone" class="coche">✔</span>
+ 
+            
+             <label for="email">E-mail :</label>
+             <input type="email" id="email" placeholder="example@domaine.com" required>
+             <span id="cocheEmail" class="coche">✔</span>
+
+            <label for="ville">Ville :</label>
+            <input type="text" id="ville" placeholder="Rechercher..." required>
+            <span id="cocheVille" class="coche">✔</span>
+            <ul id="suggestions"></ul>
+
+            <label for="statut">Statut :</label>
+            <input type="radio" name="statut" id="particulier" required checked>Particulier
+            <input type="radio" name="statut" id="professionnel" required>Professionnel
+
+            <label for="societe">Societe :</label>
+            <input type="text" id="societe" placeholder="Nom de la société" required>
+            <span id="cocheSociete" class="coche">✔</span>
+            <span id="coche" class="coche">✔</span>
+
+        </fieldset>
+
+        <fieldset id="message">
+            <legend>Message</legend>
+            <label for="objet">Objet *:</label>
+            <select type="text" name="objet" id="objet" required>
+                <option value="demande_de_contact">Demande de contact</option>
+                <option value="offre_d'emploi" selected>Offre d'emploi</option>
+                <option value="envoi_d'une_brochure_tarifiaire">Envoi d'une brochure tarifaire</option>
+            </select>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message..." required></textarea>
+            <button type="submit">Envoyer</button>
+        </fieldset>
+    </form>
+    <script src="../scripts/formulaireOp.js"></script>
+</body>
+</html>

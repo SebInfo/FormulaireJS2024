@@ -1,0 +1,108 @@
+html {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: #014e79;
+}
+
+form {
+    margin: 3% 15%;
+}
+
+textarea, button {
+    margin: 1% 0%;
+}
+
+label,select {
+    display: block;
+}
+
+legend {
+    color: green;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+label {
+    font-size: 1.1em;
+    margin-right: 1em;
+}
+
+fieldset {
+    padding: 2%;
+    border: 2px #014e79 solid;
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 0.7em 1em;
+    font-size: 0.8em;
+    border: none;
+}
+
+button:hover {
+    background-color: #014e79;
+    transition-duration: 0.5s;
+}
+
+input[type="radio"] {
+    margin-right: 1em;
+}
+
+input, select {
+    flex-grow: 1;
+    font-size: 1em;
+    background-color: transparent;
+    border: 1px #014e79 solid;
+    border-radius: 3px;
+    color: #014e79;
+    padding: 0.2%;
+}
+
+#message {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#message textarea {
+    width: 95%;
+    font-size: 1em;
+    flex-grow: 0.9em;
+    border-radius: 5px;
+    border: 1px #014e79 solid;
+    padding: 1%;
+}
+
+
+.coche {
+    display: none;
+    color: green; /* Couleur de la coche verte */
+}
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: grey;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    width: 100%;
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse la hauteur max */
+}
+
+/* Style des éléments de suggestion */
+#suggestions li {
+    font-size: 12px;  /* Ajustez la taille selon vos préférences */
+    line-height: 1.2; /* Espacement entre les lignes */
+    color: #333;      /* Couleur du texte */
+    padding: 5px;     /* Ajouter un peu d'espace autour du texte */
+    cursor: pointer;  /* Change le curseur sur les éléments de la liste */
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0; /* Ajouter un surlignage lors du survol */
+}
