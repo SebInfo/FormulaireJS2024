@@ -36,7 +36,6 @@ fetch('../scripts/cities.json')
     .then(data => {
         // Extraire les noms de ville et filtrer les doublons
         villes = [...new Set(data.cities.map(city => city.label.toLowerCase()))]; // Utilise Set pour éliminer les doublons
-        console.log(villes); // Afficher les villes sans doublons
     })
     .catch(error => console.error('Erreur de chargement du fichier JSON:', error));
 
@@ -63,16 +62,19 @@ function validerChamp(champ, coche, conditionLongueur, typeValidation, champEtat
         const valeur = champ.value.trim();
         const regex = regexTab[typeValidation];
 
+        //console.log(`Validation du champ ${champEtat}: valeur = ${valeur}, regex = ${regex}, longueur OK = ${conditionLongueur(valeur)}`);
+
         if (conditionLongueur(valeur) && regex.test(valeur)) {
             coche.style.display = 'inline'; // Affiche la coche verte
             champ.style.background = 'white';
             validationEtats[champEtat] = true;
         } else {
             coche.style.display = 'none'; // Cache la coche verte
-            champ.style.background = 'red';
+            champ.style.background = '#f8d7da';
             validationEtats[champEtat] = false;
         }
     });
+    console.log(validationEtats);
 }
 
 // Vérifie si tous les champs du formulaire sont valides
@@ -122,7 +124,6 @@ validerChamp(champSociete, cocheSociete, (valeur) => valeur.length > 10 && valeu
 validerChamp(champVille, cocheVille, (valeur) => valeur.length > 5 && valeur.length < 25, 'texte', 'ville');
 validerChamp(champTelephone, cocheTelephone, (valeur) => valeur.length === 10, 'numerique', 'telephone');
 validerChamp(champEmail, cocheEmail, (valeur) => valeur.length > 5, 'email', 'email');
-
 
 // Les écouteurs
 
